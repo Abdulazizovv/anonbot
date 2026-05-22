@@ -1,5 +1,6 @@
 from telebot import types
 from loader import bot, db
+from keyboards import main_menu
 
 
 @bot.message_handler(commands=["start"])
@@ -13,5 +14,6 @@ def start_handler(message: types.Message):
     except:
         pass
     bot.send_message(
-        message.from_user.id, "Assalomu alaykum anonim suhbat botga xush kelibsiz!"
+        message.from_user.id, "Assalomu alaykum anonim suhbat botga xush kelibsiz!",
+        reply_markup=main_menu
     )
